@@ -32,7 +32,7 @@ There is one active threads on [kodi.tv](http://forum.kodi.tv/showthread.php?tid
 
 Issues
 -----------
-Check out the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues) page on GitHub.
+Please, file an issue :) - [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues)
 
 Credits
 -----------
@@ -46,14 +46,14 @@ FAQ
 #### I can't code. How can I help?
 Spread the word. Talk about it with your friends, show them, make videos, tutorials. Talk about it on social networks, blogs etc...
 
-#### Does it work with all torrents?
-It works with most. Some torrents are known not to work. However, x264 and Xvid ones generally work pretty well, although some won't work yet. Some AVI files don't like to be streamed over HTTP, so YMMV. Of course, the goal is to shrink the number of torrents that don't work.
-
 #### The plugin doesn't work at all, what can I do?
-Check out the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues) page to post the issues with your kodi.log.
+Post your issue on the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues) page with your kodi.log.
 
 #### Can it stream HD?
-Of course! 720p and 1080p work fine, provided you have enough bandwidth, and there are enough people on the torrent.
+Of course! 720p, 1080p and 3D work fine, provided you have enough bandwidth, and there are enough people on the torrent.
+
+#### I'm not from US, does it support subtitles?
+Of course! It will always download the proper subtitle of the film, if there is one. It is also possible to use KODI to search for the subtitle in the absence of a subtitle.
 
 #### What about seeding?
 KODI Popcorn Time will seed the file you're watching until it's finished playing. For instance, if the download of a 2 hours long movie is finished in 10 minutes, you'll continue seeding it until you finish watching the movie. This is by design, to make up for the fact that we are using sequential download.
@@ -70,17 +70,10 @@ Yes, just enable this option in the addon settings.
 #### Can I set it to download directly to my NAS and keep it after playback?
 Yes of course. Just set the download directly to your NAS location, and make sure you have enabled "Keep files after playback" option.
 
-#### How can I report a bug?
-Please, file an issue :)
-
-#### Torrents are suddenly paused and then interrupted/stopped. What can I do ?
+#### The movie are suddenly paused and then interrupted/stopped. What can I do ?
 Probably your network is too slow and you are hitting a timeout used for HTTP on KODI.
 You can increase the timeout as documented [here](http://kodi.wiki/view/Advancedsettings.xml#playlisttimeout). Please
 note that increasing the timeout won't make your network faster, you just will wait more time before the torrent is interrupted.
-
-#### Provider X is blocked in my country/ISP, how can I set another domain?
-Enable Auto-Unblock in the settings.
-If it still doesn't work, you can go in Advanced > Custom Domains. Here to you can set each provider with whatever proxy you choose.
 
 Changelog
 ---------
