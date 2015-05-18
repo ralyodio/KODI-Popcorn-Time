@@ -10,7 +10,7 @@
         <platform>all</platform>
         <website><![CDATA[http://forum.kodi.tv/showthread.php?tid=227283]]></website>
         <forum><![CDATA[http://forum.kodi.tv/showthread.php?tid=227283]]></forum>
-        <source><![CDATA[https://github.com/Diblo/plugin.video.kodipopcorntime]]></source>
+        <source><![CDATA[https://github.com/Diblo/KODI-Popcorn-Time]]></source>
         <language></language>
         <license><![CDATA[GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007]]></license>
         <summary><![CDATA[KODI Popcorn Time: Immediately steam movies in KODI.]]></summary>
