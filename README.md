@@ -1,9 +1,10 @@
+
 KODI Popcorn Time
 ===========
 
 What it is
 ----------
-KODI Popcorn Time offers that you can search for movies, with you can see immediately in KODI.
+With KODI Popcorn Time you can search for movies that you can see immediately in KODI.
 
 Download
 --------
@@ -17,23 +18,28 @@ Supported Platforms
 * Raspberry Pi
 * Android 4.0+
 
+
 How it works
 ------------
 KODI Popcorn Time is actually two parts:
 * _KODI Popcorn Time_: the addon written in Python.
 * `torrent2http`: a custom torrent client written in Go and leveraging libtorrent-rasterbar, that turns magnet links into HTTP endpoints, using sequential download.
 
-If you feel adventurous, you can find the `torrent2http` and `libtorrent-go` sources at:
-* https://github.com/steeve/libtorrent-go
-* https://github.com/steeve/torrent2http
 
 Discussions
 -----------
-One threads are active on [kodi.tv](http://forum.kodi.tv/showthread.php?tid=174736).
+There is one active threads on [kodi.tv](http://forum.kodi.tv/showthread.php?tid=227283).
+
+Issues
+-----------
+Check out the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues) page on GitHub.
 
 Credits
 -----------
-KODI Popcorn Time is a rewrite of [xbmctorrent](https://github.com/steeve/xbmctorrent).
+* KODI Popcorn Time is a rewrite of [xbmctorrent](https://github.com/steeve/xbmctorrent).
+* https://github.com/steeve/libtorrent-go
+* https://github.com/steeve/torrent2http
+
 
 FAQ
 ---
@@ -44,13 +50,10 @@ Spread the word. Talk about it with your friends, show them, make videos, tutori
 It works with most. Some torrents are known not to work. However, x264 and Xvid ones generally work pretty well, although some won't work yet. Some AVI files don't like to be streamed over HTTP, so YMMV. Of course, the goal is to shrink the number of torrents that don't work.
 
 #### The plugin doesn't work at all, what can I do?
-You can send me your kodi.log.
+Check out the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues) page to post the issues with your kodi.log.
 
 #### Can it stream HD?
 Of course! 720p and 1080p work fine, provided you have enough bandwidth, and there are enough people on the torrent.
-
-#### Doesn't sequential download on torrent is bad?
-Generally, yes. However, KODI Popcorn Time respects the same [requirements "defined" by uTorrent 3](http://www.utorrent.com/help/faq/ut3#faq2[/url]). Also, KODI Popcorn Time tries to make it up to the swarm by seeding while you watch the movie.
 
 #### What about seeding?
 KODI Popcorn Time will seed the file you're watching until it's finished playing. For instance, if the download of a 2 hours long movie is finished in 10 minutes, you'll continue seeding it until you finish watching the movie. This is by design, to make up for the fact that we are using sequential download.
@@ -78,7 +81,6 @@ note that increasing the timeout won't make your network faster, you just will w
 #### Provider X is blocked in my country/ISP, how can I set another domain?
 Enable Auto-Unblock in the settings.
 If it still doesn't work, you can go in Advanced > Custom Domains. Here to you can set each provider with whatever proxy you choose.
-
 
 Changelog
 ---------
