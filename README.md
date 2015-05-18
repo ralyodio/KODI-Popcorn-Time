@@ -52,7 +52,7 @@ Post your issue on the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issue
 #### Can it stream HD?
 Of course! 720p, 1080p and 3D work fine, provided you have enough bandwidth, and there are enough people on the torrent.
 
-#### I'm not from US, does it support subtitles?
+#### Does it supports subtitles?
 Of course! It will always download the proper subtitle of the film, if there is one. It is also possible to use KODI to search for the subtitle in the absence of a subtitle.
 
 #### What about seeding?
