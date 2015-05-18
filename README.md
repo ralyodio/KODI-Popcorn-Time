@@ -8,7 +8,7 @@ With KODI Popcorn Time you can search for movies that you can see immediately in
 
 Download
 --------
-Check out the [Releases](https://github.com/Diblo/KODI-Popcorn-Time/releases) tab to download the ZIP file.
+Check out the [Releases](https://github.com/Diblo/plugin.video.kodipopcorntime/releases) tab to download the ZIP file.
 
 Supported Platforms
 -------------------
@@ -32,7 +32,7 @@ There is one active threads on [kodi.tv](http://forum.kodi.tv/showthread.php?tid
 
 Issues
 -----------
-Check out the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues) page on GitHub.
+Check out the [issues](https://github.com/Diblo/plugin.video.kodipopcorntime/issues) page on GitHub.
 
 Credits
 -----------
@@ -50,7 +50,7 @@ Spread the word. Talk about it with your friends, show them, make videos, tutori
 It works with most. Some torrents are known not to work. However, x264 and Xvid ones generally work pretty well, although some won't work yet. Some AVI files don't like to be streamed over HTTP, so YMMV. Of course, the goal is to shrink the number of torrents that don't work.
 
 #### The plugin doesn't work at all, what can I do?
-Check out the [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues) page to post the issues with your kodi.log.
+Check out the [issues](https://github.com/Diblo/plugin.video.kodipopcorntime/issues) page to post the issues with your kodi.log.
 
 #### Can it stream HD?
 Of course! 720p and 1080p work fine, provided you have enough bandwidth, and there are enough people on the torrent.
@@ -84,4 +84,4 @@ If it still doesn't work, you can go in Advanced > Custom Domains. Here to you c
 
 Changelog
 ---------
-Check out the [Releases](https://github.com/Diblo/KODI-Popcorn-Time/releases) tab.
+Check out the [Releases](https://github.com/Diblo/plugin.video.kodipopcorntime/releases) tab.
