@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.kodipopcorntime" name="KODI Popcorn Time" version="0.6.1" provider-name="Diblo">
+<addon id="plugin.video.kodipopcorntime" name="KODI Popcorn Time" version="0.6.3" provider-name="Diblo">
     <requires>
         <import addon="xbmc.python" version="2.19.0"/>
     </requires>
@@ -8,12 +8,12 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
-        <website><![CDATA[http://forum.kodi.tv/showthread.php?tid=227283]]></website>
-        <forum><![CDATA[http://forum.kodi.tv/showthread.php?tid=227283]]></forum>
+        <website><![CDATA[https://github.com/Diblo/KODI-Popcorn-Time]]></website>
+        <forum></forum>
         <source><![CDATA[https://github.com/Diblo/KODI-Popcorn-Time]]></source>
-        <language></language>
+        <language>English</language>
         <license><![CDATA[GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007]]></license>
         <summary><![CDATA[KODI Popcorn Time: Immediately steam movies in KODI.]]></summary>
-        <description><![CDATA[KODI Popcorn Time offers that you can search for movies, with you can see immediately in KODI.]]></description>
+        <description><![CDATA[With KODI Popcorn Time you can search for movies that you can see immediately in KODI.]]></description>
     </extension>
 </addon>
