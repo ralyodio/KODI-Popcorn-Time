@@ -25,11 +25,6 @@ KODI Popcorn Time is actually two parts:
 * _KODI Popcorn Time_: the addon written in Python.
 * `torrent2http`: a custom torrent client written in Go and leveraging libtorrent-rasterbar, that turns magnet links into HTTP endpoints, using sequential download.
 
-
-Discussions
------------
-There is one active threads on [kodi.tv](http://forum.kodi.tv/showthread.php?tid=227283).
-
 Issues
 -----------
 Please, file an issue :) - [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues)
