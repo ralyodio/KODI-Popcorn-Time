@@ -12,9 +12,9 @@
   <string id="30104">Keep files after playback/download stops</string>
   <string id="30105">Content</string>
   <string id="30106">Auto-unblocking via Immunicity</string>
-  <string id="30107">Adult Content</string>
-  <string id="30108">Torrent</string>
-  <string id="30109">Magnet Booster</string>
+
+  <string id="30108">Network</string>
+
   <string id="30110">Max Download Rate (kB/s)</string>
   <string id="30111">Encryption</string>
   <string id="30112">Advanced</string>
