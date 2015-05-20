@@ -1,4 +1,3 @@
-
 KODI Popcorn Time
 ===========
 
@@ -18,23 +17,25 @@ Supported Platforms
 * Raspberry Pi
 * Android 4.0+
 
-
 How it works
 ------------
 KODI Popcorn Time is actually two parts:
 * _KODI Popcorn Time_: the addon written in Python.
 * `torrent2http`: a custom torrent client written in Go and leveraging libtorrent-rasterbar, that turns magnet links into HTTP endpoints, using sequential download.
 
+Discussions
+------------
+There is one active threads on [tvaddons.ag](http://forums.tvaddons.ag/threads/32586-KODI-Popcorn-Time?p=271031).
+
 Issues
 -----------
-Please, file an issue :) - [issues](https://github.com/Diblo/KODI-Popcorn-Time/issues)
+Please, file an issue :) - [Issues](https://github.com/Diblo/KODI-Popcorn-Time/issues)
 
 Credits
 -----------
 * KODI Popcorn Time is a rewrite of [xbmctorrent](https://github.com/steeve/xbmctorrent).
 * https://github.com/steeve/libtorrent-go
 * https://github.com/steeve/torrent2http
-
 
 FAQ
 ---
