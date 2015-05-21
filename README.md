@@ -14,7 +14,7 @@ Check out the [Releases](https://github.com/Diblo/KODI-Popcorn-Time/releases) ta
 Supported Platforms
 -------------------
 * Helix 14.x (KODI)
-* Gotham 13.x (XBMC) - This is still a pre-release
+* Gotham 13.x (XBMC) - Still in pre-release
 * Windows x32 x64
 * OS X x32 and x64
 * Linux x32 and x64
