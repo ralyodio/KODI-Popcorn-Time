@@ -5,17 +5,22 @@ What it is
 ----------
 With KODI Popcorn Time you can search for movies that you can see immediately in KODI.
 
+
 Download
 --------
 Check out the [Releases](https://github.com/Diblo/KODI-Popcorn-Time/releases) tab to download the ZIP file.
 
+
 Supported Platforms
 -------------------
+* Helix 14.x (KODI)
+* Gotham 13.x (XBMC) - This is still a pre-release
 * Windows x32 x64
 * OS X x32 and x64
 * Linux x32 and x64
 * Raspberry Pi
 * Android 4.0+
+
 
 How it works
 ------------
@@ -23,19 +28,28 @@ KODI Popcorn Time is actually two parts:
 * _KODI Popcorn Time_: the addon written in Python.
 * `torrent2http`: a custom torrent client written in Go and leveraging libtorrent-rasterbar, that turns magnet links into HTTP endpoints, using sequential download.
 
+
 Discussions
 ------------
 There is one active threads on [tvaddons.ag](http://forums.tvaddons.ag/threads/32586-KODI-Popcorn-Time?p=271031).
 
-Issues
------------
-Please, file an issue :) - [Issues](https://github.com/Diblo/KODI-Popcorn-Time/issues)
 
 Credits
 -----------
 * KODI Popcorn Time is a rewrite of [xbmctorrent](https://github.com/steeve/xbmctorrent).
 * https://github.com/steeve/libtorrent-go
 * https://github.com/steeve/torrent2http
+
+
+Issues
+-----------
+Please, file an issue :) - [Issues](https://github.com/Diblo/KODI-Popcorn-Time/issues)
+
+
+Changelog
+---------
+Check out the [Releases](https://github.com/Diblo/KODI-Popcorn-Time/releases) tab.
+
 
 FAQ
 ---
@@ -70,7 +84,3 @@ KODI Popcorn Time will seed the file you're watching until it's finished playing
 Probably your network is too slow and you are hitting a timeout used for HTTP on KODI.
 You can increase the timeout as documented [here](http://kodi.wiki/view/Advancedsettings.xml#playlisttimeout). Please
 note that increasing the timeout won't make your network faster, you just will wait more time before the torrent is interrupted.
-
-Changelog
----------
-Check out the [Releases](https://github.com/Diblo/KODI-Popcorn-Time/releases) tab.
