@@ -78,8 +78,8 @@
   <string id="30301">Cache cleared.</string>
   <string id="30302">Your system "%(os)s_%(arch)s" is not supported.</string>
   <string id="30303">Unable to add this file. Magnet is incomplete.</string>
-  <string id="30304">xxxx</string>
-  <string id="30305">xxxx</string>
+  <string id="30304">Unable to connect to providers.</string>
+  <string id="30305">Error. Please check the log file</string>
   <string id="30306">xxxx</string>
   <string id="30307">xxxx</string>
   <string id="30308">xxxx</string>
