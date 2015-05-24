@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
-  <!-- Plugin name -->
+  <!--  -->
   <string id="30000">KODI Popcorn Time</string>
+  <string id="30001">KODI Popcorn Time - Search</string>
+  <string id="30002">Search</string>
+  <string id="30003">Browse by Genre</string>
+  <string id="30004">Most Popular</string>
+  <string id="30005">Best Rated</string>
+  <string id="30006">Most Recent</string>
+  <string id="30007">Fetching movie information...</string>
+  <string id="30009">>> Next page</string>
 
   <!-- 
    * Settings
@@ -96,4 +104,34 @@
   <string id="30319">xxxx</string>
   <string id="30320">xxxx</string>
   <string id="30321">xxxx</string>
+
+  <!-- 
+   * notify
+   -->
+  <string id="30400">Action</string>
+  <string id="30401">Adventure</string>
+  <string id="30402">Animation</string>
+  <string id="30403">Biography</string>
+  <string id="30404">Comedy</string>
+  <string id="30405">Crime</string>
+  <string id="30406">Documentary</string>
+  <string id="30407">Drama</string>
+  <string id="30408">Family</string>
+  <string id="30409">Fantasy</string>
+  <string id="30410">Film-Noir</string>
+  <string id="30411">Game-Show</string>
+  <string id="30412">History</string>
+  <string id="30413">Horror</string>
+  <string id="30414">Music</string>
+  <string id="30415">Musical</string>
+  <string id="30416">Mystery</string>
+  <string id="30417">News</string>
+  <string id="30418">Reality-TV</string>
+  <string id="30419">Romance</string>
+  <string id="30420">Sci-Fi</string>
+  <string id="30421">Sport</string>
+  <string id="30422">Talk-Show</string>
+  <string id="30423">Thriller</string>
+  <string id="30424">War</string>
+  <string id="30425">Western</string>
 </strings>
