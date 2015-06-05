@@ -18,7 +18,7 @@
             <description lang="en"><![CDATA[With KODI Popcorn Time you can search for movies that you can see immediately in KODI.]]></description>
         </extension>
     </addon>
-    <addon id="plugin.video.kodipopcorntime" name="KODI Popcorn Time" version="0.6.2" provider-name="Diblo">
+    <addon id="plugin.video.kodipopcorntime" name="KODI Popcorn Time" version="0.6.3~beta" provider-name="Diblo">
         <requires>
             <import addon="xbmc.python" version="2.14.0"/>
         </requires>
