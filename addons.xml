@@ -53,4 +53,21 @@
             <nofanart>false</nofanart> 
         </extension>
     </addon>
+    <addon id="plugin.video.kodipopcorntime" name="Just a repo test" version="0.0.1" provider-name="Diblo">
+        <requires>
+            <import addon="xbmc.python" version="2.14.0"/>
+        </requires>
+        <extension point="xbmc.addon.metadata">
+            <platform>windx</platform>
+            <website><![CDATA[https://github.com/Diblo/KODI-Popcorn-Time]]></website>
+            <forum><![CDATA[http://forums.tvaddons.ag/threads/32586-KODI-Popcorn-Time]]></forum>
+            <source><![CDATA[https://github.com/Diblo/KODI-Popcorn-Time]]></source>
+            <language>English</language>
+            <license><![CDATA[GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007]]></license>
+            <summary lang="en"><![CDATA[KODI Popcorn Time Auto Update.]]></summary>
+            <description lang="en"><![CDATA[KODI Popcorn Time Auto Update.]]></description>
+            <noicon>false</noicon> 
+            <nofanart>false</nofanart> 
+        </extension>
+    </addon>
 </addons>
