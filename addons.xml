@@ -57,9 +57,6 @@
         <requires>
             <import addon="xbmc.python" version="2.14.0"/>
         </requires>
-        <extension point="xbmc.python.pluginsource" library="addon.py">
-            <provides>video</provides>
-        </extension>
         <extension point="xbmc.addon.metadata">
             <platform>windx</platform>
             <website><![CDATA[https://github.com/Diblo/KODI-Popcorn-Time]]></website>
