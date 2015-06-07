@@ -16,6 +16,8 @@
             <license><![CDATA[GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007]]></license>
             <summary lang="en"><![CDATA[KODI Popcorn Time: Immediately steam movies in KODI.]]></summary>
             <description lang="en"><![CDATA[With KODI Popcorn Time you can search for movies that you can see immediately in KODI.]]></description>
+            <noicon>false</noicon> 
+            <nofanart>false</nofanart> 
         </extension>
     </addon>
     <addon id="plugin.video.kodipopcorntime" name="KODI Popcorn Time" version="0.6.3~beta" provider-name="Diblo">
@@ -34,6 +36,8 @@
             <license><![CDATA[GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007]]></license>
             <summary lang="en"><![CDATA[KODI Popcorn Time: Immediately steam movies in KODI.]]></summary>
             <description lang="en"><![CDATA[With KODI Popcorn Time you can search for movies that you can see immediately in KODI.]]></description>
+            <noicon>false</noicon> 
+            <nofanart>false</nofanart> 
         </extension>
     </addon>
     <addon id="repository.kodipopcorntime" name="KODI Popcorn Time Repository" version="1.0.1" provider-name="Diblo">
