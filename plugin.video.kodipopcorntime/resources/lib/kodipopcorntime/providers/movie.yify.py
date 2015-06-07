@@ -1,18 +1,17 @@
 from os import path
-from kodipopcorntime import plugin
+from kodipopcorntime.common import plugin
 from kodipopcorntime.library import library_context
 from kodipopcorntime.magnet import from_meta_data
-import xbmcaddon
 
 BASE_URLS = [
     "http://yts.to/",
     "http://eqwww.image.yt"
 ]
-if not plugin.get_setting("base_yify") in BASE_URLS:
-    BASE_URLS.insert(0, "%s/" % plugin.get_setting("base_yify"))
+if not Plugin.get_setting("base_yify") in BASE_URLS:
+    BASE_URLS.insert(0, "%s/" % Plugin.get_setting("base_yify"))
 else:
-    BASE_URLS.remove("%s/" % plugin.get_setting("base_yify"))
-    BASE_URLS.insert(0, "%s/" % plugin.get_setting("base_yify"))
+    BASE_URLS.remove("%s/" % Plugin.get_setting("base_yify"))
+    BASE_URLS.insert(0, "%s/" % Plugin.get_setting("base_yify"))
 
 MOVIES_PER_PAGE = 20
 GENRES = [
@@ -47,34 +46,34 @@ GENRES = [
 def index():
     return [
         {
-            "label": plugin.addon.getLocalizedString(30002),
-            "icon": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
-            "thumbnail": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
-            "path": plugin.url_for("search")
+            "label": Plugin.addon.getLocalizedString(30002),
+            "icon": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Search.png'),
+            "thumbnail": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Search.png'),
+            "path": Plugin.url_for("search")
         },
         {
-            "label": plugin.addon.getLocalizedString(30003),
-            "icon": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Genres.png'),
-            "thumbnail": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Genres.png'),
-            "path": plugin.url_for("genres")
+            "label": Plugin.addon.getLocalizedString(30003),
+            "icon": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Genres.png'),
+            "thumbnail": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Genres.png'),
+            "path": Plugin.url_for("genres")
         },
         {
-            "label": plugin.addon.getLocalizedString(30004),
-            "icon": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Top.png'),
-            "thumbnail": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Top.png'),
-            "path": plugin.url_for("movies", sort_by="seeds", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE)
+            "label": Plugin.addon.getLocalizedString(30004),
+            "icon": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Top.png'),
+            "thumbnail": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Top.png'),
+            "path": Plugin.url_for("movies", sort_by="seeds", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE)
         },
         {
-            "label": plugin.addon.getLocalizedString(30005),
-            "icon": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Top.png'),
-            "thumbnail": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Top.png'),
-            "path": plugin.url_for("movies", sort_by="rating", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE)
+            "label": Plugin.addon.getLocalizedString(30005),
+            "icon": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Top.png'),
+            "thumbnail": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Top.png'),
+            "path": Plugin.url_for("movies", sort_by="rating", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE)
         },
         {
-            "label": plugin.addon.getLocalizedString(30006),
-            "icon": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Recently.png'),
-            "thumbnail": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Recently.png'),
-            "path": plugin.url_for("movies", sort_by="date", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE)
+            "label": Plugin.addon.getLocalizedString(30006),
+            "icon": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Recently.png'),
+            "thumbnail": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'media', 'Recently.png'),
+            "path": Plugin.url_for("movies", sort_by="date", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE)
         },
     ]
 
@@ -88,15 +87,15 @@ def show_data(callback):
     from kodipopcorntime.providers import tmdb, yifysubs
     from kodipopcorntime.utils import url_get_json, SafeDialogProgress
 
-    plugin.set_content("movies")
-    args = dict((k, v[0]) for k, v in plugin.request.args.items())
+    Plugin.set_content("movies")
+    args = dict((k, v[0]) for k, v in Plugin.request.args.items())
 
     current_page = int(args["page"])
     limit = int(args["limit"])
 
     with closing(SafeDialogProgress(delay_close=0)) as dialog:
-        dialog.create(plugin.name)
-        dialog.update(percent=0, line1=plugin.addon.getLocalizedString(30007), line2="", line3="")
+        dialog.create(Plugin.name)
+        dialog.update(percent=0, line1=Plugin.addon.getLocalizedString(30007), line2="", line3="")
 
         search_result = {}
         for url in BASE_URLS:
@@ -105,10 +104,10 @@ def show_data(callback):
                 break
 
         if not search_result:
-            plugin.notify(plugin.addon.getLocalizedString(30304))
-            plugin.log.error('Could not connect to %s/movie/%s?api_key=%s' %(BASE_URL, imdb_id, API_KEY))
+            Plugin.notify(Plugin.addon.getLocalizedString(30304))
+            Plugin.log.error('Could not connect to %s/movie/%s?api_key=%s' %(BASE_URL, imdb_id, API_KEY))
             yield {
-                    "label": plugin.addon.getLocalizedString(30305)
+                    "label": Plugin.addon.getLocalizedString(30305)
                 }
             return
 
@@ -117,10 +116,10 @@ def show_data(callback):
         if not movies:
             if callback == "search_query":
                 yield {
-                        "label": plugin.addon.getLocalizedString(30008),
-                        "icon": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
-                        "thumbnail": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
-                        "path": plugin.url_for("search")
+                        "label": Plugin.addon.getLocalizedString(30008),
+                        "icon": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
+                        "thumbnail": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
+                        "path": Plugin.url_for("search")
                     }
             return
 
@@ -160,7 +159,7 @@ def show_data(callback):
                         item["info"]["duration"] = movie["runtime"]
 
                     item.update({
-                        "path": plugin.url_for("play", sub=sub[0], uri=from_meta_data(torrent["hash"], movie["title_long"], torrent["quality"])),
+                        "path": Plugin.url_for("play", sub=sub[0], uri=from_meta_data(torrent["hash"], movie["title_long"], torrent["quality"])),
                         "is_playable": True,
                     })
 
@@ -195,8 +194,8 @@ def show_data(callback):
             next_args = args.copy()
             next_args["page"] = int(next_args["page"]) + 1
             yield {
-                "label": plugin.addon.getLocalizedString(30009),
-                "path": plugin.url_for(callback, **next_args),
+                "label": Plugin.addon.getLocalizedString(30009),
+                "path": Plugin.url_for(callback, **next_args),
             }
 
 @library_context
@@ -209,15 +208,15 @@ def search_show_data():
     from kodipopcorntime.providers import tmdb, yifysubs
     from kodipopcorntime.utils import url_get_json, SafeDialogProgress
 
-    plugin.set_content("movies")
-    args = dict((k, v[0]) for k, v in plugin.request.args.items())
+    Plugin.set_content("movies")
+    args = dict((k, v[0]) for k, v in Plugin.request.args.items())
 
     current_page = int(args["page"])
     limit = int(args["limit"])
 
     with closing(SafeDialogProgress(delay_close=0)) as dialog:
-        dialog.create(plugin.name)
-        dialog.update(percent=0, line1=plugin.addon.getLocalizedString(30007), line2="", line3="")
+        dialog.create(Plugin.name)
+        dialog.update(percent=0, line1=Plugin.addon.getLocalizedString(30007), line2="", line3="")
 
         try:
             search_result = tmdb.search(args[query])
@@ -227,10 +226,10 @@ def search_show_data():
         if not movies:
             if callback == "search_query":
                 yield {
-                        "label": plugin.addon.getLocalizedString(30008),
-                        "icon": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
-                        "thumbnail": path.join(plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
-                        "path": plugin.url_for("search")
+                        "label": Plugin.addon.getLocalizedString(30008),
+                        "icon": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
+                        "thumbnail": path.join(Plugin.addon.getAddonInfo('path'), 'resources', 'icons', 'Search.png'),
+                        "path": Plugin.url_for("search")
                     }
             return
 
@@ -267,7 +266,7 @@ def search_show_data():
                         item["info"]["duration"] = movie["runtime"]
 
                     item.update({
-                        "path": plugin.url_for("play", sub=sub[0], uri=from_meta_data(torrent["hash"], movie["title_long"], torrent["quality"])),
+                        "path": Plugin.url_for("play", sub=sub[0], uri=from_meta_data(torrent["hash"], movie["title_long"], torrent["quality"])),
                         "is_playable": True,
                     })
 
@@ -302,26 +301,26 @@ def search_show_data():
             next_args = args.copy()
             next_args["page"] = int(next_args["page"]) + 1
             yield {
-                "label": plugin.addon.getLocalizedString(30009),
-                "path": plugin.url_for("search_query", **next_args),
+                "label": Plugin.addon.getLocalizedString(30009),
+                "path": Plugin.url_for("search_query", **next_args),
             }
 
 def genres():
     for k, v in enumerate(GENRES):
         yield {
-            "label": plugin.addon.getLocalizedString((30400 + k)),
-            "path": plugin.url_for("genre", genre=v, sort_by="seeds", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE),
+            "label": Plugin.addon.getLocalizedString((30400 + k)),
+            "path": Plugin.url_for("genre", genre=v, sort_by="seeds", order="desc", quality="all", page=1, limit=MOVIES_PER_PAGE),
         }
 
 def genre(genre, page):
-    plugin.request.args.update({
+    Plugin.request.args.update({
         "genre": [genre],
         "page": [page],
     })
     return show_data("genre")
 
 def movies(sort_by, quality, page):
-    plugin.request.args.update({
+    Plugin.request.args.update({
         "sort_by": [sort_by],
         "quality": [quality],
         "page": [page],
@@ -329,10 +328,10 @@ def movies(sort_by, quality, page):
     return show_data("movies")
 
 def search(query):
-    plugin.redirect(plugin.url_for("search_query", query=query, quality="all", page=1, limit=MOVIES_PER_PAGE))
+    Plugin.redirect(Plugin.url_for("search_query", query=query, quality="all", page=1, limit=MOVIES_PER_PAGE))
 
 def search_query(query, page):
-    plugin.request.args.update({
+    Plugin.request.args.update({
         "query_term": [query],
         "page": [page],
     })

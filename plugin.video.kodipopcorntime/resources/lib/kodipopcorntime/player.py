@@ -1,8 +1,7 @@
-import xbmc, xbmcgui, urllib, os, time, urlparse
-from kodipopcorntime import plugin, torrent2http
+import xbmc, xbmcgui, urllib, os, time
+from kodipopcorntime import torrent2http
 from kodipopcorntime.providers.yifysubs import get_subtitle, clear_subtitle
-from kodipopcorntime.common import RESOURCES_PATH
-from kodipopcorntime.platform import PLATFORM
+from kodipopcorntime.common import plugin, RESOURCES_PATH, PLATFORM
 from kodipopcorntime.utils import url_get_json
 from contextlib import contextmanager, closing, nested
 
@@ -42,7 +41,7 @@ class OverlayText(object):
         self._shown = False
         self._text = ""
         self._label = xbmcgui.ControlLabel(x, y, w, h, self._text, *args, **kwargs)
-        self._background = xbmcgui.ControlImage(x, y, w, h, os.path.join(RESOURCES_PATH, "images", "black.png"))
+        self._background = xbmcgui.ControlImage(x, y, w, h, os.path.join(RESOURCES_PATH, "media", "black.png"))
         self._background.setColorDiffuse("0xD0000000")
 
     def show(self):
@@ -167,7 +166,7 @@ class TorrentPlayer(xbmc.Player):
 
         plugin.log.info("Starting torrent2http...")
         with closing(torrent2http.start(**self.torrent2http_options)) as t2h_instance:
-            t2h = lambda cmd: url_get_json("http://%s/%s" % (t2h_instance.bind_address, cmd), with_immunicity=False)
+            t2h = lambda cmd: url_get_json("http://%s/%s" % (t2h_instance.bind_address, cmd))
 
             if not self._wait_t2h_startup(t2h):
                 return

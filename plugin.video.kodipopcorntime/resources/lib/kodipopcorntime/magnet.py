@@ -1,6 +1,3 @@
-from kodipopcorntime.plugin import plugin
-import urllib
-
 PUBLIC_TRACKERS = [
     "udp://tracker.publicbt.com:80/announce",
     "udp://tracker.openbittorrent.com:80/announce",
@@ -18,6 +15,7 @@ PUBLIC_TRACKERS = [
 ]
 
 def from_meta_data(torrent_hash, title, quality):
+    import urllib
     name = "%s [%s]" %(title, quality)
     return "magnet:?xt=urn:btih:%s&%s" % (torrent_hash, urllib.urlencode({'dn' : name, 'tr': PUBLIC_TRACKERS}, doseq=True))
 

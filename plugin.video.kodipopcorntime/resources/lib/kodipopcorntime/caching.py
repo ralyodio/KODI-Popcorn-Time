@@ -1,23 +1,8 @@
-import xbmc, os, pickle, threading
-from kodipopcorntime import plugin
+import xbmc, os, threading
+from kodipopcorntime.common import plugin, PLATFORM, CACHE_DIR
 from contextlib import contextmanager, closing
-from kodipopcorntime.platform import PLATFORM
-
-if PLATFORM["os"] == "android":
-    from dumbdbm import _Database
-    _old_chmod = _Database._chmod
-    def _new_chmod(*args, **kwargs):
-        try:
-            return _old_chmod(*args, **kwargs)
-        except OSError: # on FAT32 this will fail
-            pass
-    _Database._chmod = _new_chmod
 
 LOCKS = {}
-
-CACHE_DIR = xbmc.translatePath("special://profile/addon_data/%s/cache" % plugin.id)
-if not os.path.exists(CACHE_DIR):
-    os.makedirs(CACHE_DIR)
 
 @contextmanager
 def shelf(filename, ttl=0):
@@ -34,11 +19,6 @@ def shelf(filename, ttl=0):
             elif ttl > 0 and (time.time() - d["created_at"]) > ttl:
                 d["data"] = {}
             yield d["data"]
-
-def del_cache_file(filename):
-    filename = os.path.join(CACHE_DIR, filename)
-    if os.path.isfile(filename):
-        os.remove(filename)
 
 def cached_route(*args, **kwargs):
     from functools import wraps

@@ -1,6 +1,11 @@
-import sys
-import os
-import xbmc
+import sys, os, xbmc
+from xbmcswift2 import Plugin
+
+def cacheDir():
+    dir = xbmc.translatePath("special://profile/addon_data/%s/cache" % plugin.id)
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    return dir
 
 def platform():
     ret = {
@@ -28,4 +33,7 @@ def platform():
 
     return ret
 
+plugin = Plugin()
+CACHE_DIR = cacheDir()
 PLATFORM = platform()
+RESOURCES_PATH = os.path.join(plugin.addon.getAddonInfo('path'), 'resources')

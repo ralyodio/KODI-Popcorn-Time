@@ -5,7 +5,7 @@ import subprocess
 from kodipopcorntime.common import RESOURCES_PATH
 from kodipopcorntime.platform import PLATFORM
 from kodipopcorntime.utils import url_get
-from kodipopcorntime import plugin
+from xbmcswift2 import Plugin
 
 
 ANDROID_XBMC_IDS = [
@@ -14,7 +14,7 @@ ANDROID_XBMC_IDS = [
     "tv.ouya.xbmc",                         # OUYA XBMC
     "com.semperpax.spmc",                   # SemPer Media Center (OUYA XBMC fork)
     "hk.minix.xbmc",                        # Minix XBMC
-    plugin.get_setting("android_app_id"),   # Whatever the user sets
+    Plugin.get_setting("android_app_id"),   # Whatever the user sets
 ]
 
 
@@ -99,6 +99,6 @@ def start(**kwargs):
     proc.bind_address = "localhost:%d" % bind_port
     def proc_close():
         if not proc.poll():
-            url_get("http://%s/shutdown" % proc.bind_address, with_immunicity=False)
+            url_get("http://%s/shutdown" % proc.bind_address)
     proc.close = proc_close
     return proc

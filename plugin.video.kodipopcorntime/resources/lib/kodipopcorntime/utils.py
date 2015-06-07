@@ -1,6 +1,8 @@
 from contextlib import contextmanager
 import xbmcgui
-from kodipopcorntime import plugin
+from kodipopcorntime.common import plugin
+
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.66 Safari/537.36"
 
 VIDEO_CODECS = {
     "x264": "h264",
@@ -29,11 +31,9 @@ def first(iterable, default=None):
             return item
     return default
 
-def url_get(url, params={}, headers={}, with_immunicity=True):
+def url_get(url, params={}, headers={}):
     import urllib2
     from contextlib import closing
-    from kodipopcorntime import plugin
-    from kodipopcorntime.common import USER_AGENT
 
     if params:
         import urllib
@@ -43,14 +43,6 @@ def url_get(url, params={}, headers={}, with_immunicity=True):
     req.add_header("User-Agent", USER_AGENT)
     for k, v in headers.items():
         req.add_header(k, v)
-
-    if with_immunicity and plugin.get_setting("immunicity", bool):
-        from kodipopcorntime import immunicity
-        proxy = immunicity.get_proxy_for(url)
-        if proxy:
-            from urlparse import urlsplit
-            parts = urlsplit(url)
-            req.set_proxy(proxy, parts[0])
 
     try:
         with closing(urllib2.urlopen(req)) as response:
@@ -69,7 +61,6 @@ def ensure_fanart(fn):
     def _fn(*a, **kwds):
         import os
         import types
-        from kodipopcorntime import plugin
         items = fn(*a, **kwds)
         if items is None:
             return

@@ -1,11 +1,10 @@
-import os
-from kodipopcorntime import plugin
+from kodipopcorntime.common import plugin
 
 @plugin.route("/cmd/clear_cache")
 def clear_cache():
-    import os
-    import glob
-    from kodipopcorntime.caching import CACHE_DIR
+    import os, glob
+    from kodipopcorntime.common import CACHE_DIR
+
     for directory in [CACHE_DIR, plugin.storage_path]:
         for dbfile in glob.glob(os.path.join(directory, "*.db")):
             os.remove(dbfile)

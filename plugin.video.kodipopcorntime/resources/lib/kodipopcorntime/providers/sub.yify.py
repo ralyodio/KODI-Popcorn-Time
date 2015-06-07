@@ -1,5 +1,5 @@
 import os, xbmc
-from kodipopcorntime import plugin
+from xbmcswift2 import Plugin
 from kodipopcorntime.caching import CACHE_DIR
 
 BASE_URL = "http://www.yifysubtitles.com"
@@ -95,9 +95,9 @@ SUBTYPES = ['.srt']
 def get_lang(sub_lang_id):
     return [ SUBLANG_EN[sub_lang_id], SUBLANG_ISO[sub_lang_id] ]
 
-SUBLANG_EN_1, SUBLANG_ISO_1 = get_lang(plugin.get_setting("sub_language1"))
-SUBLANG_EN_2, SUBLANG_ISO_2 = get_lang(plugin.get_setting("sub_language2"))
-SUBLANG_EN_3, SUBLANG_ISO_3 = get_lang(plugin.get_setting("sub_language3"))
+SUBLANG_EN_1, SUBLANG_ISO_1 = get_lang(Plugin.get_setting("sub_language1"))
+SUBLANG_EN_2, SUBLANG_ISO_2 = get_lang(Plugin.get_setting("sub_language2"))
+SUBLANG_EN_3, SUBLANG_ISO_3 = get_lang(Plugin.get_setting("sub_language3"))
 
 def get_sub_items(imdb_id):
     if SUBLANG_EN_1 == 'none':
@@ -106,7 +106,7 @@ def get_sub_items(imdb_id):
     import urllib2
     from kodipopcorntime.utils import url_get_json
     try:
-        data = url_get_json("%s/%s" % (API_BASE_URL, imdb_id), headers=HEADERS, with_immunicity=False) or {}
+        data = url_get_json("%s/%s" % (API_BASE_URL, imdb_id), headers=HEADERS) or {}
     except urllib2.HTTPError:
         return None
 

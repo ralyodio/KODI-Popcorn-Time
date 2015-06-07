@@ -1,5 +1,4 @@
-import os
-from kodipopcorntime import plugin
+from kodipopcorntime.common import plugin
 
 LIBRARY_PATHS = {
     "KODI Popcorn Time Movies": {
@@ -18,8 +17,7 @@ def _get_video_db():
     return xbmc.translatePath("special://database/MyVideos%s.db" % versions[major])
 
 def _rescan_library(path=None):
-    import json
-    import xbmc
+    import json, xbmc
     params = {}
     if path:
         params["directory"] = path
@@ -33,7 +31,7 @@ def _rescan_library(path=None):
 @plugin.route("/library/add")
 def library_add():
     import os, xbmc, xbmcgui
-    from urllib import quote_plus, unquote
+    from urllib import unquote
     from kodipopcorntime.magnet import display_name
 
     play_url = "plugin://plugin.video.kodipopcorntime/play/"
@@ -53,10 +51,7 @@ def library_add():
 
 @plugin.route("/library/install")
 def library_install():
-    import os
-    import sqlite3
-    import xbmc
-    import xbmcgui
+    import os, sqlite3, xbmc, xbmcgui
     from contextlib import closing
     import xml.etree.ElementTree as ET
 
@@ -89,10 +84,7 @@ def library_install():
 
 @plugin.route("/library/uninstall")
 def library_uninstall():
-    import os
-    import sqlite3
-    import xbmc
-    import xbmcgui
+    import sqlite3, xbmc, xbmcgui
     from contextlib import closing
     import xml.etree.ElementTree as ET
     sources_filename = xbmc.translatePath("special://userdata/sources.xml")
@@ -113,7 +105,6 @@ def library_uninstall():
 def library_context(fn):
     """Makes sure that if the listitem doesn't have a fanart, we properly set one."""
     from functools import wraps
-    import urlparse
     @wraps(fn)
     def _fn(*a, **kwds):
         items = fn(*a, **kwds)
