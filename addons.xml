@@ -53,7 +53,7 @@
             <nofanart>false</nofanart> 
         </extension>
     </addon>
-    <addon id="plugin.video.kodipopcorntimedddd name="Just a repo test" version="0.0.1" provider-name="Diblo">
+    <addon id="plugin.video.kodipopcorntime" name="Just a repo test" version="0.0.1" provider-name="Diblo">
         <requires>
             <import addon="xbmc.python" version="2.14.0"/>
         </requires>
