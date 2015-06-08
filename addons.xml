@@ -40,7 +40,7 @@
             <nofanart>false</nofanart> 
         </extension>
     </addon>
-    <addon id="repository.kodipopcorntime" name="KODI Popcorn Time Repository" version="1.0.1" provider-name="Diblo">
+    <addon id="repository.kodipopcorntime" name="KODI Popcorn Time Repository" version="1.0.2" provider-name="Diblo">
         <requires>
             <import addon="xbmc.python" version="2.14.0"/>
         </requires>
