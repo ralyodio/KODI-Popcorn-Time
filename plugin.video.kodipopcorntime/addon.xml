@@ -13,7 +13,7 @@
         <source><![CDATA[https://github.com/Diblo/KODI-Popcorn-Time]]></source>
         <language>English</language>
         <license><![CDATA[GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007]]></license>
-        <summary lang="en"><![CDATA[KODI Popcorn Time: Immediately steam movies in KODI.]]></summary>
+        <summary lang="en"><![CDATA[KODI Popcorn Time: Immediately stream movies in KODI.]]></summary>
         <description lang="en"><![CDATA[With KODI Popcorn Time you can search for movies that you can see immediately in KODI.]]></description>
     </extension>
 </addon>
